@@ -18,8 +18,8 @@ function Navbar() {
                    </div>
                    {
                     isOpen && ( 
-                      <div className="relative flex flex-col mt-6 ">
-                         <div className="absolute bg-slate-50 p-2 ">
+                      <div className="relative flex flex-col ">
+                         <div className="absolute bg-slate-50 p-2 mt-4">
                          <ul className=" space-y-1 ">
                          <li>
                              <NavLink  to="/">Home</NavLink>
@@ -39,10 +39,10 @@ function Navbar() {
                     )
                    }
                </div>
-               <div className="text-3xl font-medium md:text-2xl">
+               <div className="text-xl font-medium md:text-3xl">
                 <h1>Online Store</h1>
                </div>
-                <div className="hidden md:block">
+                <div className="hidden md:block m-2">
                 <ul className=" flex inline-block space-x-4 text-xl font-medium-semibold ml-4 ">
                     <li>
                         <NavLink to="/">Home</NavLink>
