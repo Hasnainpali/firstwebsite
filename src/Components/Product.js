@@ -17,26 +17,26 @@ function Product() {
 
   return (
     <div className="container p-6">
-      <div className="flex">
-        <div className=" grid grid-cols-2">
+      <div className="md:flex">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2">
           <img
             src={product.image}
             alt={product.title}
-            height="600px"
-            width="600px"
+            height="400px"
+            width="400px"
           />
         </div>
-        <div className=" grid-cols-2 space-y-2 md:space-y-6">
+        <div className="  sm:grid-cols-1 md:grid-cols-2 space-y-2 mt-10 ">
           <h3 className="uppercase text-2xl text-gray-950">
-            {product.category}{" "}
+           <span>Category:</span>{product.category}
           </h3>
-          <h1 className="text-xl font-medium"> {product.title} </h1>
+          <h1 className="text-xl font-medium"> <span>Title: </span>{product.title} </h1>
           <p className="flex ">
             Rating {product.rating && product.rating.rate}
             <AiFillStar className="mt-1 ml-2 text-yellow-300" />
           </p>
-          <p className="text-lg font-bolder"> {product.description} </p>
-          <button className="bg-white text-black outline outline-2 p-1 hover:bg-black hover:text-white rounded-lg">
+          <p className="text-lg font-bolder text-justify"> <span> Description:</span> {product.description} </p>
+          <button className="bg-white text-black outline outline-2 p-1 hover:bg-black hover:text-white rounded-lg w-96 md:w-48">
             Add to Cart
           </button>
         </div>
