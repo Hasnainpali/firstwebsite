@@ -7,31 +7,35 @@ function Navbar() {
   const [isOpen,setIsOpen]= useState(false);
 
   const toggledropdown =()=>{
-    setIsOpen(!isOpen)
+    setIsOpen(!isOpen);
+   
+  }
+  const handleonclick = ()=>{
+    setIsOpen(false)
   }
   return (
     <div className="container bg-slate-100 py-2">
          <div className="flex justify-between items-center py-4 px-4 m-auto max-w-7xl">
          <div className="block md:hidden mr-4">
                <div className="text-black">
-                   <HiBars3 onClick={toggledropdown} className=''/>
+                   <HiBars3 onClick={toggledropdown} />
                    </div>
                    {
                     isOpen && ( 
-                      <div className="relative flex flex-col ">
-                         <div className="absolute bg-slate-50 p-2 mt-4">
+                      <div className="relative flex flex-col z-10">
+                         <div className="absolute  bg-slate-50 p-2 mt-4">
                          <ul className=" space-y-1 ">
                          <li>
-                             <NavLink  to="/">Home</NavLink>
+                             <NavLink onClick={handleonclick} to="/">Home</NavLink>
                          </li>
                          <li>
-                             <NavLink  to='/Products'>Products</NavLink>
+                             <NavLink onClick={handleonclick} to='/Products'>Products</NavLink>
                          </li>
                          <li>
-                             <NavLink  to='/Contact'>Contact</NavLink>
+                             <NavLink onClick={handleonclick} to='/Contact'>Contact</NavLink>
                          </li>
                          <li>
-                             <NavLink  to='/About'>About</NavLink>
+                             <NavLink onClick={handleonclick} to='/About'>About</NavLink>
                          </li>
                       </ul>
                          </div>
