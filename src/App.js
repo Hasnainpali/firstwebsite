@@ -1,4 +1,3 @@
-
 import Cart from "./Components/Cart";
 import { CartProvider } from "./Components/Context/cart";
 import Home from "./Components/Home";

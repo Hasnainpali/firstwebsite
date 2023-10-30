@@ -45,7 +45,7 @@ function Products() {
                       return(
                         <div className='bg-white shadow-md rounded-lg hover:scale-y-105 hover:m-2'>
                            <div className="mb-5">
-                           <div key={product.id}  className="h-full text-center p-4 ">
+                           <div key={product.id} className="h-full text-center p-4 ">
                                 <img className='h-[250px] m-auto'src={product.image} alt={product.title} />
                           
                             <div className="font-medium text-lg py-4 space-y-4 ">

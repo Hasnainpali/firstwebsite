@@ -29,16 +29,16 @@ function Cart() {
         ))}
       </div> 
           {
-            cartItems.length > 0 ? (   
-                 
+            cartItems.length > 0 ? ( (product) => {
+               return(
                <div className="flex flex-col float-right mt-10 mr-2 shadow-md p-4">
-                <h1 className="text-lg">Items Quantity:{}</h1>
+                <h1 className="text-lg">Items Quantity:{product.quantity}</h1>
                 <h1 className="text-lg font-bold mb-10">Total:${getCartTotal()} </h1>
                 <button className="px-2 py-2 text-lg font-bold bg-black text-white rounded-lg " onClick={()=>{clearCart()}}>
                   Clear Cart
                 </button>
               </div>
-            ):(
+           )}):(
               <h1 className="text-lg font-bold">Your Cart is Empty</h1>
             )
           } 

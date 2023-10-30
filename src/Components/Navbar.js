@@ -76,7 +76,7 @@ function Navbar() {
                     Register</NavLink>
                 <button  className=' relative bg-white-800 text-black  hover:bg-green-800 hover:text-white p-1 rounded-lg'>
                     <BsCartPlus className='inline-block 'size={30} />
-                    <span className='absolute top-0  bottom-0 '> ({cartItems.length}) </span> </button>
+                    <span className='absolute text-xs font-bold top-0 bottom-0'> ({cartItems.length}) </span> </button>
                </div>
                
          </div>
