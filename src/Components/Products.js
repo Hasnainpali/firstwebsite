@@ -18,14 +18,14 @@ function Products() {
  
 
     const filterProduct =(cat)=>{
-      const updatedlist = data.filter((x)=>x.category===cat)
+      const updatedlist = data.filter((item)=>item.category===cat)
       setFilter(updatedlist);
     }
   return (
     <div className='container p-5'>
        <div className=" flex-row">
        <div className=" text-3xl">
-            <h2 className='font-bold text-center '>
+            <h2 className='font-bold text-center mt-10 '>
                 Latest Products</h2><hr/>
          </div>
          </div>
@@ -39,13 +39,13 @@ function Products() {
             </div>
          
        </div>
-       <div className="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
+       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-2">
        {
                   filter.map((product)=>{
                       return(
-                        <div className='border border-2 m-2 shadow-slate-700 '>
+                        <div className='bg-white shadow-md rounded-lg hover:scale-y-105 hover:m-2'>
                            <div className="mb-5">
-                           <div key={product.id}  className="h-full text-center p-4">
+                           <div key={product.id}  className="h-full text-center p-4 ">
                                 <img className='h-[250px] m-auto'src={product.image} alt={product.title} />
                           
                             <div className="font-medium text-lg py-4 space-y-4 ">

@@ -1,3 +1,6 @@
+
+import Cart from "./Components/Cart";
+import { CartProvider } from "./Components/Context/cart";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
 import Product from "./Components/Product";
@@ -7,13 +10,16 @@ function App() {
   return (
     <>
      <BrowserRouter>
+     <CartProvider>
          <Navbar/>
    
       <Routes>
        <Route exact path='/' element={<Home/>}/> 
        <Route exact path='/Products' element={<Products/>}/>  
        <Route exact path='/Products/:id'element={<Product/>}/>
-         </Routes>
+       <Route exact path='/Cart' element={<Cart/>}/>
+      </Routes>
+      </CartProvider>
       </BrowserRouter>
     </>
   );

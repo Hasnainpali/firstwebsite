@@ -1,9 +1,12 @@
-import React,{useState} from 'react'
-import {CiLogin} from 'react-icons/ci'
-import {BsFillPersonPlusFill, BsCartPlus} from 'react-icons/bs'
+import React,{ useContext,useState} from 'react'
+import { BsCartPlus} from 'react-icons/bs'
 import { NavLink } from 'react-router-dom'
 import {HiBars3} from 'react-icons/hi2'
+import { CartContext } from './Context/cart'
+
 function Navbar() {
+  const{cartItems}=useContext(CartContext)
+   
   const [isOpen,setIsOpen]= useState(false);
 
   const toggledropdown =()=>{
@@ -13,6 +16,7 @@ function Navbar() {
   const handleonclick = ()=>{
     setIsOpen(false)
   }
+
   return (
     <div className="container bg-slate-100 py-2">
          <div className="flex justify-between items-center py-4 px-4 m-auto max-w-7xl">
@@ -63,13 +67,16 @@ function Navbar() {
                  </ul>
           
                 </div>
-               <div className="space-x-1 text-xl flex md:space-x-2 ">
-                  <NavLink to='/Login' className=' bg-white-800 text-black   hover:bg-green-800 hover:text-white p-1 rounded-lg'>
-                  <CiLogin className='inline-block me-0 md:me-1'/>Login</NavLink>
+               <div className="space-x-1 text-xl flex md:space-x-4 ">
+                  <NavLink  to='/Login' className=' bg-white-800 text-black   hover:bg-green-800 hover:text-white p-1 rounded-lg'>
+            
+                    <span>Login</span>
+                  </NavLink>
                   <NavLink to='/Register' className='bg-white-800 text-black  hover:bg-green-800 hover:text-white p-1 rounded-lg'>
-                    <BsFillPersonPlusFill className='inline-block me-0 md:me-1'/>Register</NavLink>
-                  <NavLink to='/Cart' className=' bg-white-800 text-black  hover:bg-green-800 hover:text-white p-1 rounded-lg'>
-                    <BsCartPlus className='inline-block me-0 md:me-1' />Cart </NavLink>
+                    Register</NavLink>
+                <button  className=' relative bg-white-800 text-black  hover:bg-green-800 hover:text-white p-1 rounded-lg'>
+                    <BsCartPlus className='inline-block 'size={30} />
+                    <span className='absolute top-0  bottom-0 '> ({cartItems.length}) </span> </button>
                </div>
                
          </div>
