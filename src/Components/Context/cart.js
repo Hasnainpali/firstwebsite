@@ -35,6 +35,12 @@ const getCartTotal =()=>{
     )
    
 }
+const itemQuantity = () =>{
+    return(
+        cartItems.reduce((total,item)=> total + item.quantity,0)
+    )
+}
+
 
 
 useEffect(() => {
@@ -57,6 +63,8 @@ return(
         removeCart,
         clearCart,
         getCartTotal,
+        itemQuantity,
+    
      }}>
         {children}
      </CartContext.Provider>
