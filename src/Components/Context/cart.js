@@ -2,7 +2,7 @@ import { createContext,useState,useEffect} from "react";
 
 export const CartContext = createContext()
 export const CartProvider = ({children}) => {
- const [cartItems,setCartItems]= useState(localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) :[])
+ const [cartItems,setCartItems]= useState(localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")):[])
 
 const addToCart = (item)=>{
      const isItemInCart = cartItems.find((cartItem)=> cartItem.id === item.id)
@@ -41,19 +41,16 @@ const itemQuantity = () =>{
     )
 }
 
-
-
-useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]);
-
-  useEffect(() => {
-    const cartItems = localStorage.getItem("cartItems");
-    if (cartItems) {
-      setCartItems(JSON.parse(cartItems));
-    }
-  }, []);
-
+ useEffect(() => {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems))
+}, [cartItems]);
+ 
+useEffect(()=>{
+     const cartItems = JSON.parse(localStorage.getItem("cartitems"))
+         if(cartItems){
+            setCartItems(cartItems)
+         }
+    },[])
 
 return(
     <CartContext.Provider

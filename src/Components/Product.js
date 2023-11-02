@@ -19,9 +19,9 @@ function Product() {
     FetchData();
   }, [id]);
   return (
-    <div className="container p-6">
-      <div className="md:flex ">
-        <div className="grid grid-cols-4">
+    <div className="container p-4 ">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:flex ">
+        <div className="">
           <img className=""
             src={product.image}
             alt={product.title}
@@ -29,7 +29,7 @@ function Product() {
             width={500}
           />
         </div>
-        <div className="grid cols-span-6 space-y-4 mt-10 md:mt-0 ">
+        <div className=" space-y-4 ml:0 mt-10 md:mt-0 md:ml-10 ">
           <h3 className="uppercase text-3xl text-gray-950">
            <span>Category:</span>{product.category}
           </h3>

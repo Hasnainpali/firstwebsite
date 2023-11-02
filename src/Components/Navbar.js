@@ -6,8 +6,8 @@ import { CartContext } from './Context/cart'
 
 function Navbar() {
   const{cartItems}=useContext(CartContext)
-   
   const [isOpen,setIsOpen]= useState(false);
+
 
   const toggledropdown =()=>{
     setIsOpen(!isOpen);
@@ -16,6 +16,8 @@ function Navbar() {
   const handleonclick = ()=>{
     setIsOpen(false)
   }
+
+
 
   return (
     <div className="container bg-slate-100 py-2">
@@ -68,9 +70,8 @@ function Navbar() {
           
                 </div>
                <div className="space-x-1 text-xl flex md:space-x-4 ">
-                  <NavLink  to='/Login' className=' bg-white-800 text-black   hover:bg-green-800 hover:text-white p-1 rounded-lg'>
-            
-                    <span>Login</span>
+                <NavLink to="/login"  className=' bg-white-800 text-black   hover:bg-green-800 hover:text-white p-1 rounded-lg' >
+                   <span>Login</span>
                   </NavLink>
                   <NavLink to='/Register' className='bg-white-800 text-black  hover:bg-green-800 hover:text-white p-1 rounded-lg'>
                     Register</NavLink>

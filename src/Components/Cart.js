@@ -8,7 +8,7 @@ function Cart() {
   <div className='container p-2'>
      <div className="flex flex-col flex-wrap gap-4">
         {cartItems.map((product)=>(
-          <div className="flex items-center gap-4 shadow-lg">
+          <div className="flex items-center gap-4 shadow-lg" key={product.id}>
             <div className="pl-2 pb-3 md:flex gap-4 lg:flex gap-4 " >
                <img  className='h-[200px] m-auto '  src={product.image} alt={product.title}/>
                <div className="flex gap-4 md:ml-28 lg:ml-48 mt-4 lg:flex flex-col  ">
@@ -27,22 +27,22 @@ function Cart() {
             </div>
           </div>
         ))}
-      </div> 
-          {
-            cartItems.length > 0 ? ( 
-               
-               <div className="flex flex-col float-right mt-10 mr-2 shadow-md p-4">
-                <h1 className="text-lg font-medium mb-4">Items Quantity: {itemQuantity()}</h1>
-                <h1 className="text-lg font-bold mb-10">Total:${getCartTotal()} </h1>
-                <button className="px-2 py-2 text-lg font-bold bg-black text-white rounded-lg " onClick={()=>{clearCart()}}>
-                  Clear Cart
-                </button>
-              </div>
-            ):(
-              <h1 className="text-lg font-bold">Your Cart is Empty</h1>
-            )
-          } 
+      </div>       
   </div>
+    //  {
+    //   cartItems.length > 0 ? ( 
+         
+    //      <div className="flex flex-col float-right mt-10 mr-2 shadow-md p-4">
+    //       <h1 className="text-lg font-medium mb-4">Items Quantity: {itemQuantity()}</h1>
+    //       <h1 className="text-lg font-bold mb-10">Total:${getCartTotal()} </h1>
+    //       <button className="px-2 py-2 text-lg font-bold bg-black text-white rounded-lg " onClick={()=>{clearCart()}}>
+    //         Clear Cart
+    //       </button>
+    //     </div>
+    //   ):(
+    //     <h1 className="text-lg font-bold">Your Cart is Empty</h1>
+    //   )
+    // } 
   
   )
 }

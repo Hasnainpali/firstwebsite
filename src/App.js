@@ -1,3 +1,5 @@
+import About from "./Components/About";
+import Banner from "./Components/Banner";
 import Cart from "./Components/Cart";
 import { CartProvider } from "./Components/Context/cart";
 import Home from "./Components/Home";
@@ -16,8 +18,10 @@ function App() {
        <Route exact path='/' element={<Home/>}/> 
        <Route exact path='/Products' element={<Products/>}/>  
        <Route exact path='/Products/:id'element={<Product/>}/>
+       <Route exact path="/About" element={<About/>}/>
        <Route exact path='/Cart' element={<Cart/>}/>
       </Routes>
+      <Banner/>
       </CartProvider>
       </BrowserRouter>
     </>
