@@ -3,7 +3,7 @@ import {useContext} from 'react'
 import { CartContext } from './Context/cart'
 
 function Cart() {
-    const {cartItems,addToCart,removeCart,clearCart,getCartTotal,itemQuantity}=useContext(CartContext)
+    const {cartItems,addToCart,removeCart}=useContext(CartContext)
   return (
   <div className='container p-2'>
      <div className="flex flex-col flex-wrap gap-4">
