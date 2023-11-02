@@ -1,6 +1,6 @@
 import About from "./Components/About";
-import Banner from "./Components/Banner";
 import Cart from "./Components/Cart";
+import Contaact from "./Components/Contaact,";
 import { CartProvider } from "./Components/Context/cart";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
@@ -13,15 +13,15 @@ function App() {
      <BrowserRouter>
      <CartProvider>
          <Navbar/>
-   
       <Routes>
        <Route exact path='/' element={<Home/>}/> 
        <Route exact path='/Products' element={<Products/>}/>  
        <Route exact path='/Products/:id'element={<Product/>}/>
        <Route exact path="/About" element={<About/>}/>
        <Route exact path='/Cart' element={<Cart/>}/>
+       <Route exact path="/Contact" element={<Contaact/>}/>
       </Routes>
-      <Banner/>
+
       </CartProvider>
       </BrowserRouter>
     </>

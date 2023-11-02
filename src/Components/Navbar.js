@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import {HiBars3} from 'react-icons/hi2'
 import { CartContext } from './Context/cart'
 
+
 function Navbar() {
   const{cartItems}=useContext(CartContext)
   const [isOpen,setIsOpen]= useState(false);
@@ -78,9 +79,9 @@ function Navbar() {
                 <NavLink to="/Cart" className=' relative bg-white-800 text-black  hover:bg-green-800 hover:text-white p-1 rounded-lg'>
                     <BsCartPlus className='inline-block 'size={30} />
                     <span className='absolute text-xs font-bold top-0 bottom-0'> ({cartItems.length}) </span> </NavLink>
-               </div>
-               
+               </div>   
          </div>
+       
     </div>
   )
 }

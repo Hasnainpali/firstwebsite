@@ -2,8 +2,8 @@ import React from 'react'
 
 function Banner() {
   return (
-    <div>
-       <div className=" flex mt-4 bg-gray-200 p-3">
+    <div className=''>
+       <div className=" flex mt-4 bg-gray-200 p-3 ' ">
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
              <li><a href="/">Quick Links</a></li>
           </div>
