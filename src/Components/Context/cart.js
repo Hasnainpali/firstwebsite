@@ -45,12 +45,7 @@ const itemQuantity = () =>{
       localStorage.setItem("cartItems", JSON.stringify(cartItems))
 }, [cartItems]);
  
-useEffect(()=>{
-     const cartItems = JSON.parse(localStorage.getItem("cartitems"))
-         if(cartItems){
-            setCartItems(cartItems)
-         }
-    },[])
+
 
 return(
     <CartContext.Provider
