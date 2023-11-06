@@ -2,26 +2,22 @@ import React,{useState} from 'react'
 import {SiAwslambda} from 'react-icons/si'
 import { NavLink } from 'react-router-dom'
 
-function Signup({handlesignup}) {
-  
-     const[firstname,setFirstname] = useState("")
-     const[Lastname,setLastname] = useState("")
-     const[Email,setEmail] = useState("")
-     const[Password,setPassword] = useState("")
-   
-     const HandleSubmit =(event)=>{
-      event.preventDefault();
-      handlesignup({firstname,Lastname,Email,Password});
-      setFirstname('')
-      setLastname('')
-      setEmail('')
-      setPassword('')
-   
-     }
-     
- 
-   
+function Signup({handleSignup}) {
+  const [firstname,setFirstname]=useState("")
+  const [lastname,setLastname]=useState("")
+  const [email,setEmail]=useState("")
+  const [password,setPassword]=useState("")
+
+  const HandleSubmit =(event)=>{
+    event.preventDefault();
+    setFirstname('')
+    setLastname('')
+    setEmail('')
+    setPassword('')
+    handleSignup({firstname,lastname,email,password})
     
+  }
+
   return (
     <div className='container w-96  m-auto  '>
         <form onSubmit={HandleSubmit}>
@@ -34,10 +30,10 @@ function Signup({handlesignup}) {
          </div> 
          <div className="input">
            <div className="flex flex-col border-none outline-none">
-            <input id="firstname" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="text" value={firstname} onChange={(event)=>{setFirstname(event.target.value)}} placeholder='FirstName' /> 
-            <input id="lastname" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="text" value={Lastname} onChange={(event)=>{setLastname(event.target.value)}} placeholder='LastName.' />
-            <input id="email" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="email" value={Email} onChange={(event)=>{setEmail(event.target.value)}} placeholder='Email' />
-            <input id="password" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="password" value={Password} onChange={(event)=>{setPassword(event.target.value)}} placeholder='Password' />
+            <input id="firstname" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="text" placeholder='FirstName' value={firstname} onChange={(event)=>setFirstname(event.target.value)}   /> 
+            <input id="lastname" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="text"  placeholder='LastName.' value={lastname} onChange={(event)=>setLastname(event.target.value)} />
+            <input id="email" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="email" placeholder='Email' value={email} onChange={(event)=>setEmail(event.target.value)} />
+            <input id="password" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="password"  placeholder='Password' value={password} onChange={(event)=>setPassword(event.target.value)} />
            </div>   
          </div>  
           <div className="forgetpswd text-blue-400 underline space-x-4">

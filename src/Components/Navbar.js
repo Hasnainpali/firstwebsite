@@ -8,8 +8,6 @@ import { CartContext } from './Context/cart'
 function Navbar() {
   const{cartItems}=useContext(CartContext)
   const [isOpen,setIsOpen]= useState(false);
-
-
   const toggledropdown =()=>{
     setIsOpen(!isOpen);
    
@@ -17,9 +15,6 @@ function Navbar() {
   const handleonclick = ()=>{
     setIsOpen(false)
   }
-
-
-
   return (
     <div className="container bg-slate-100 py-2">
          <div className="flex justify-between items-center py-4 px-4 m-auto max-w-7xl">
@@ -81,8 +76,8 @@ function Navbar() {
                     <span className='absolute text-xs font-bold top-0 bottom-0'> ({cartItems.length}) </span> </NavLink>
                </div>   
          </div>
-       
     </div>
+
   )
 }
 
