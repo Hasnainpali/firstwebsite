@@ -8,11 +8,15 @@ function Contaact() {
      btn.classList.remove("bg-white","text-black")
 
      
-     let name =  document.getElementById("name").value = ""
-     let email =  document.getElementById("email").value = ""
-     let message =  document.getElementById("message").value = ""
+     let name =  document.getElementById("name").value 
+     let email =  document.getElementById("email").value 
+     let message =  document.getElementById("message").value 
      users.push({name, email, message})
      console.log(users)
+
+      document.getElementById("name").value  = ''
+      document.getElementById("email").value = '' 
+      document.getElementById("message").value  = ''
   }
 
     
