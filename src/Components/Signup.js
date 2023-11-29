@@ -37,7 +37,7 @@ function Signup({handleSignup}) {
            </div>   
          </div>  
           <div className="forgetpswd text-blue-400 underline space-x-4">
-            <a className='' href="/">Already Account is Here? </a>
+            <NavLink className='' to="/Login">Already Account Click Here? </NavLink>
             <NavLink to='/Login'>Login</NavLink>
           </div>
           <div className="btn m-2 w-80 bg-purple-600  rounded-lg text-center">

@@ -31,7 +31,7 @@ const clearCart = ()=>{
 }
 const getCartTotal =()=>{
     return (
-        cartItems.reduce((total,item)=>total + item.price * item.quantity, 0) 
+        cartItems.reduce((total,item)=>total + item.price && item.price.rate * item.quantity, 0) 
     )
    
 }

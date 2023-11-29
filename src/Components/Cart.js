@@ -8,11 +8,11 @@ function Cart() {
      <div className="flex flex-col flex-wrap gap-4">
         {cartItems.map((product)=>(
           <div className="flex items-center gap-4 shadow-lg" key={product.id}>
-            <div className="pl-2 pb-3 md:flex gap-4 lg:flex gap-4 " >
-               <img  className='h-[200px] m-auto '  src={product.image} alt={product.title}/>
+            <div className="pl-2 pb-3 md:flex  lg:flex gap-4 " >
+               <img  className='h-[200px] m-auto '  src={product.image &&product.image.url} alt={product.title}/>
                <div className="flex gap-4 md:ml-28 lg:ml-48 mt-4 lg:flex flex-col  ">
-                 <h2 className='text-lg uppercase font-bold md:text-2xl  '>{product.title}</h2>
-                 <p className="text-2xl font-bold">${product.price}</p>
+                 <h2 className='text-lg uppercase font-bold md:text-2xl  '>{product.title && product.title.title}</h2>
+                 <p className="text-2xl font-bold">${product.price && product.price.rate}</p>
                </div>
                <div className="flex items-center px-4 py-2 bg-gray-500 text-white text-lg rounded-lg w-32 gap-2 mt-4 md:h-12 md:mt-36 lg:mt-36 lg:mr-28">
                <button onClick={()=>{addToCart(product)}}>

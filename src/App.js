@@ -1,13 +1,12 @@
-import Banner from "./Components/Banner";
 import About from "./Components/About";
 import Cart from "./Components/Cart";
-import Contaact from "./Components/Contaact,";
+import Contaact from './Components/Contaact,';
 import { CartProvider } from "./Components/Context/cart";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
 import Product from "./Components/Product";
 import Products from "./Components/Products";
-import { BrowserRouter,Routes,Route,Switch } from "react-router-dom";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import { useState } from "react";
@@ -41,7 +40,7 @@ function App() {
        <Route exact path="/Login" element={<Login users={users}/>}/>
        <Route exact path='/Cart' element={<Cart/>}/>
        </Routes>
-    
+
       </CartProvider>
       </BrowserRouter>
     </>
