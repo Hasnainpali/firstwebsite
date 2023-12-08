@@ -4,8 +4,8 @@ import { CartContext } from './Context/cart'
 function Cart() {
     const {cartItems,addToCart,removeCart,itemQuantity,getCartTotal,clearCart}=useContext(CartContext)
   return (
-  <div className='container p-2'>
-     <div className="flex flex-col flex-wrap gap-4">
+  <div className='container p-2 min-h-screen'>
+     <div className="flex flex-col flex-wrap gap-4 ">
         {cartItems.map((product)=>(
           <div className="flex items-center gap-4 shadow-lg" key={product.id}>
             <div className="pl-2 pb-3 md:flex  lg:flex gap-4 " >
@@ -30,7 +30,7 @@ function Cart() {
       {
       cartItems.length > 0 ? ( 
        
-         <div className="flex flex-col float-right mt-10 mr-2 shadow-md p-4">
+         <div className="flex flex-col float-right mt-10 mr-2 shadow-md p-4 ">
           <h1 className="text-lg font-medium mb-4">Items Quantity: {itemQuantity()}</h1>
           <h1 className="text-lg font-bold mb-10">Total Price: ${getCartTotal()} </h1>
           <button className="px-2 py-2 text-lg font-bold bg-black text-white rounded-lg " onClick={()=>{clearCart()}}>
@@ -38,7 +38,7 @@ function Cart() {
           </button>
         </div>
       ):(
-        <h1 className="text-lg font-bold">Your Cart is Empty</h1>
+        <h1 className="text-lg font-bold ">Your Cart is Empty</h1>
       )
     }       
   </div>

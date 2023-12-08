@@ -15,9 +15,9 @@ const filterData = (category)=>{
    console.log(updatedData)
 }
    return(
-     <div>
+     <div > 
            {data.content[0].Heading.map((headItem,HeadIndex)=>(
-              <React.Fragment key={HeadIndex}>
+              <div key={HeadIndex} className='min-h-screen'>
                 {headItem.headingTitle.type === 'Text' &&(
                   <h1 style={headItem.headingTitle.style}>
                      {headItem.headingTitle.Title}
@@ -25,8 +25,8 @@ const filterData = (category)=>{
                   </h1>
                 )}
                 {headItem.subHeading.map((subItem,subIndex)=>(
-                  <React.Fragment key={subIndex}>
-                    <div style={subItem.styles}>
+                  <React.Fragment key={subIndex} >
+                    <div style={subItem.styles} >
                        {subItem.subTitle1.type === 'Text'&&(
                         <button onClick={()=>setFiltered(data.content[0].Heading[0].subHeading[0].items)} style={subItem.subTitle1.style}>{subItem.subTitle1.title} </button>
                        )}
@@ -67,7 +67,7 @@ const filterData = (category)=>{
                      </div>
                   </React.Fragment>
                 ))}
-              </React.Fragment>
+              </div>
              ))
            }
      </div>

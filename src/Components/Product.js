@@ -15,9 +15,9 @@ function Product() {
     }, [id]);
  
   return (
-    <div>
+    <div >
           {product &&(
-             <div key={product.id} >
+             <div key={product.id} className='min-h-screen'>
                        <div className='grid md:grid-cols-2 lg:grid-cols-2'>
                          {product.image &&(
                            <img src={product.image.url} alt={product.title} style={{width:400, height:400, marginBottom:"20px",}}/>

@@ -19,7 +19,7 @@ function Signup({handleSignup}) {
   }
 
   return (
-    <div className='container w-96  m-auto  '>
+    <div className='container w-96  m-auto min-h-screen '>
         <form onSubmit={HandleSubmit}>
         <div className="form flex flex-col justify-center items-center m-4 rounded-lg  shadow-lg gap-5">
          <div className="header text-4xl font-medium underline text-black ">

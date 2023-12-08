@@ -2,7 +2,7 @@ import React from 'react'
 
 function Banner() {
   return (
-    <div className=''>
+    <div className='mt-20'>
        <div className=" flex mt-4 bg-black text-white text-lg p-3 ">
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
              <li><a href="/">Quick Links</a></li>
