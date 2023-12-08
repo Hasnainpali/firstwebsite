@@ -5,6 +5,8 @@ import {HiBars3} from 'react-icons/hi2'
 import { CartContext } from './Context/cart'
 
 
+
+
 function Navbar() {
   const{cartItems}=useContext(CartContext)
   const [isOpen,setIsOpen]= useState(false);

@@ -2,7 +2,6 @@ import React,{useState,useEffect} from 'react'
 import { NavLink } from 'react-router-dom';
 import data from './Data';
 
-
 function Products() {
  const [filtered, setFiltered]= useState([]);
 
@@ -15,19 +14,6 @@ const filterData = (category)=>{
    setFiltered(updatedData);
    console.log(updatedData)
 }
-// const gridStyle = {
-//   display: 'grid',
-//   gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
-//   gap: '4px',
-// };
-// const mediaQueryStyle = {
-//   '@media (max-width: 768px)': {
-//     gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-//   },
-//   '@media (max-width: 480px)': {
-//     gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
-//   },
-// };
    return(
      <div>
            {data.content[0].Heading.map((headItem,HeadIndex)=>(
