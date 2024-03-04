@@ -13,7 +13,7 @@ const data = {
             type: "Text",
             Title: "Latest Products",
             style: {
-              fontSize: "24px",
+              fontSize: "36px",
               fontWeight: "bold",
               textAlign: "center",
             },

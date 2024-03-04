@@ -9,7 +9,6 @@ import Products from "./Components/Products";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
-import Banner from './Components/Banner';
 import Footer from './Components/Footer';
 import { useState } from "react";
 
@@ -45,7 +44,7 @@ function App() {
        
       </CartProvider>
       </BrowserRouter>
-      <Banner/>
+      
       <Footer/>
     </>
   );

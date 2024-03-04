@@ -17,9 +17,9 @@ const filterData = (category)=>{
    return(
      <div > 
            {data.content[0].Heading.map((headItem,HeadIndex)=>(
-              <div key={HeadIndex} className='min-h-screen'>
+              <div key={HeadIndex} className='min-h-screen mt-4'>
                 {headItem.headingTitle.type === 'Text' &&(
-                  <h1 style={headItem.headingTitle.style}>
+                  <h1  style={headItem.headingTitle.style}>
                      {headItem.headingTitle.Title}
                      <hr></hr>
                   </h1>

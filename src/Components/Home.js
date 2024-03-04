@@ -1,20 +1,52 @@
-import React from 'react'
+import React from "react";
+import './Home.css';
 
 function Home() {
   return (
-    <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 pt-4 min-h-screen'>
-       <div className="w-full h-full bg-sky-200  ">
-          <div className="translate-y-0 space-y-4  md:translate-y-4 xl:translate-y-36">
-          <h1 className="text-3xl font-bold md:text-4xl lg:text-6xl ">Find Your Perfect Items</h1>
-        <p className='text-justify'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque corporis reiciendis dolor nemo deserunt ea consectetur quibusdam aspernatur minus incidunt, consequatur quaerat quam quidem quo cumque minima saepe cum voluptas.</p>
-        <button className=' p-3 bg-red-500 rounded-lg hover:bg-red-400 font-semibold '>Shop Now</button>
-          </div>
-       </div>
-       <div className=" mt-10 md:mt-0 lg:mt-0">
-         <img className='w-full h-full' src="/bgimg.jpg" alt="herosection" />          
-       </div>  
+    <div className="">
+      <section id="hero">
+         <div className="mt-48">
+            <h4 className="text-4xl font-semibold">Trade-in-fair</h4>
+            <h2 className="text-4xl font-semibold">Super value deals</h2>
+            <h1 className="text-4xl font-semibold">On all Products</h1>
+            <p className="text-3xl">Save more with coupons and up to 70% off!</p>
+            <button className="text-4xl">Shop Now</button>
+         </div>
+      </section>
+
+      <section id="feature" className="section-p1">
+        <div className="fe-box">
+          <img src="https://i.postimg.cc/PrN2Y6Cv/f1.png" alt="" />
+          <h6>Free Shipping</h6>
+        </div>
+
+        <div className="fe-box">
+          <img src="https://i.postimg.cc/qvycxW4q/f2.png" alt="" />
+          <h6>Online Order</h6>
+        </div>
+
+        <div className="fe-box">
+          <img src="https://i.postimg.cc/1Rdphyz4/f3.png" alt="" />
+          <h6>Save Money</h6>
+        </div>
+
+        <div className="fe-box">
+          <img src="https://i.postimg.cc/GpYc2JFZ/f4.png" alt="" />
+          <h6>Promotions</h6>
+        </div>
+
+        <div className="fe-box">
+          <img src="https://i.postimg.cc/4yFCwmv6/f5.png" alt="" />
+          <h6>Happy Sell</h6>
+        </div>
+
+        <div className="fe-box">
+          <img src="https://i.postimg.cc/gJN1knTC/f6.png" alt="" />
+          <h6>F24/7 Support</h6>
+        </div>
+      </section>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
