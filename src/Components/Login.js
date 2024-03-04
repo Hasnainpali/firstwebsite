@@ -30,8 +30,8 @@ function Login({users}) {
          </div> 
          <div className="input">
            <div className="flex flex-col border-none outline-none">
-            <input id="email" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="email" placeholder='Email' value={email} onChange={(event)=>setEmail(event.target.value)} />
-            <input id="password" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="password" placeholder='Password' value={password} onChange={(event)=>setPassword(event.target.value)} />
+            <input id="email" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="email" placeholder='Email' value={email} onChange={(event)=>setEmail(event.target.value)} required />
+            <input id="password" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="password" placeholder='Password' value={password} onChange={(event)=>setPassword(event.target.value)} required />
            </div>   
          </div>  
          <div className="text-lg font-medium ">

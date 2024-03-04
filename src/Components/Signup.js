@@ -30,10 +30,10 @@ function Signup({handleSignup}) {
          </div> 
          <div className="input">
            <div className="flex flex-col border-none outline-none">
-            <input id="firstname" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="text" placeholder='FirstName' value={firstname} onChange={(event)=>setFirstname(event.target.value)}   /> 
-            <input id="lastname" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="text"  placeholder='LastName.' value={lastname} onChange={(event)=>setLastname(event.target.value)} />
+            <input id="firstname" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="text" placeholder='FirstName' value={firstname} onChange={(event)=>setFirstname(event.target.value)} required   /> 
+            <input id="lastname" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="text"  placeholder='LastName.' value={lastname} onChange={(event)=>setLastname(event.target.value)} required />
             <input id="email" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="email" placeholder='Email' value={email} onChange={(event)=>setEmail(event.target.value)} />
-            <input id="password" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="password"  placeholder='Password' value={password} onChange={(event)=>setPassword(event.target.value)} />
+            <input id="password" className='px-2 py-2 w-80 m-2 rounded-lg bg-gray-200' type="password"  placeholder='Password' value={password} onChange={(event)=>setPassword(event.target.value)} required />
            </div>   
          </div>  
           <div className="forgetpswd text-blue-400 underline space-x-4">

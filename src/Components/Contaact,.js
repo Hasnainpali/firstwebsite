@@ -22,7 +22,7 @@ function Contaact() {
     
   return (
     <div className='flex flex-col pt-6 '>
-         <div className=" ml-0 md:pl-48 xl:pl-48 min-h-screen">
+         <div className=" ml-0 md:pl-48 xl:pl-48 ">
          <div className="text-3xl font-bold ">
               <h1 className="">Message Us</h1>
            </div>
