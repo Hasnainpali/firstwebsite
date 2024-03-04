@@ -6,10 +6,10 @@ function Home() {
     <div className="">
       <section id="hero">
          <div className="mt-48">
-            <h4 className="text-4xl font-semibold">Trade-in-fair</h4>
-            <h2 className="text-4xl font-semibold">Super value deals</h2>
-            <h1 className="text-4xl font-semibold">On all Products</h1>
-            <p className="text-3xl">Save more with coupons and up to 70% off!</p>
+            <h4 className="text-3xl font-semibold sm: text-3xl">Trade-in-fair</h4>
+            <h2 className="text-2xl font-semibold sm: text-2xl">Super value deals</h2>
+            <h1 className="text-2xl font-semibold sm: text-2xl">On all Products</h1>
+            <p className="text-2xl sm: text-xl">Save more with coupons and up to 70% off!</p>
             <button className="text-4xl">Shop Now</button>
          </div>
       </section>
