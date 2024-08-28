@@ -9,8 +9,6 @@ import Products from "./Components/Products";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
-
-import Footer from './Components/Footer';
 import { useState } from "react";
 
 function App() {
@@ -33,6 +31,7 @@ function App() {
        </Route>
        <Route exact path='/Products' element={<Products/>}>
         </Route>  
+        <Route exact path='/Products:category' element={<Products/>}></Route>
        <Route exact path='/Products/:id'element={<Product/>}>
         </Route>
        <Route exact path="/Contact" element={<Contaact/>}/>
@@ -45,8 +44,7 @@ function App() {
        
       </CartProvider>
       </BrowserRouter>
-      
-      <Footer/>
+
     </>
   );
 }
