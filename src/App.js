@@ -10,6 +10,7 @@ import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import { useState } from "react";
+import Category from "./Components/Category";
 
 function App() {
  const [users,setusers]=useState([])
@@ -31,7 +32,7 @@ function App() {
        </Route>
        <Route exact path='/Products' element={<Products/>}>
         </Route>  
-        <Route exact path='/Products:category' element={<Products/>}></Route>
+        <Route exact path='/Products/:category' element={<Category/>}></Route>
        <Route exact path='/Products/:id'element={<Product/>}>
         </Route>
        <Route exact path="/Contact" element={<Contaact/>}/>

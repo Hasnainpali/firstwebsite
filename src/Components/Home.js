@@ -19,7 +19,7 @@ function Home() {
             <button className="text-4xl">Shop Now</button>
          </div>
       </section>
-      {/* <Category/> */}
+      <Category/>
       <section id="feature" className="section-p1">
       <Swiper
             spaceBetween={20}
