@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from "swiper/modules";
+import ProductList from "./ProductList";
 
 function Home() {
   return (
@@ -19,7 +20,7 @@ function Home() {
             <button className="text-4xl">Shop Now</button>
          </div>
       </section>
-      <Category/>
+      <ProductList/>
       <section id="feature" className="section-p1">
       <Swiper
             spaceBetween={20}
