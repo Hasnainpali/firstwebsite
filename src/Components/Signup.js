@@ -1,9 +1,11 @@
-import React,{useState} from 'react'
+import React,{useContext, useEffect, useState} from 'react'
 import {SiAwslambda} from 'react-icons/si'
 import { NavLink } from 'react-router-dom'
 import UseData from './Hook/UseData'
+import { Data } from './Context/SigninSignupContext'
 
 function Signup({handleSignup}) {
+  const {setNavFooter} = useContext(Data)
   const [firstname,setFirstname]=useState("")
   const [lastname,setLastname]=useState("")
   const [email,setEmail]=useState("")
@@ -20,8 +22,11 @@ function Signup({handleSignup}) {
     setUsers([...users])
     console.log(setUsers)
     handleSignup({firstname,lastname,email,password})
-    
-  }
+  };
+
+  useEffect(()=>{
+    setNavFooter(false)
+  },[]);
 
   return (
     <div className=' w-96 m-auto  '>

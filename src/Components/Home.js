@@ -1,14 +1,17 @@
 import React from "react";
 import './Home.css';
-import Category from "./Category";
 import {Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from "swiper/modules";
 import ProductList from "./ProductList";
+// import { useDispatch, useSelector } from "react-redux";
+// import { Decrement, Increment } from "./Redux/Action";
 
 function Home() {
+  // const counter = useSelector(state => state.Counter )
+  // const dispatch = useDispatch()
   return (
     <div className="">
       <section id="hero">
@@ -21,6 +24,11 @@ function Home() {
          </div>
       </section>
       <ProductList/>
+        {/* <div className=" flex flex-col mx-3 my-3">
+           {counter}
+           <button onClick={() => dispatch(Increment())}>Add</button>
+           <button onClick={() => dispatch(Decrement())}>sub</button>
+        </div> */}
       <section id="feature" className="section-p1">
       <Swiper
             spaceBetween={20}

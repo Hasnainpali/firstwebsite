@@ -1,12 +1,19 @@
 import React, { useContext, useState } from "react";
 import { BsCartPlus } from "react-icons/bs";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { CartContext } from "./Context/cart";
 import "./Navbar.css";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "./Redux/Action";
 
 function Navbar() {
   const { cartItems } = useContext(CartContext);
-  const [navCollapse, setNavCollapse]= useState(false)
+  const [navCollapse, setNavCollapse]= useState(false);
+  const auth = useSelector(state => state.auth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  console.log("Auth State:", auth); // Add this line to log the auth state
   
   const handleNavCollapse =()=>{
     setNavCollapse(!navCollapse)
@@ -14,6 +21,12 @@ function Navbar() {
   const closeNavCollaspse=()=>{
     setNavCollapse(false)
   }
+
+  const handleLogout = () =>{
+    dispatch(logout())
+    navigate('/login')
+};
+
 
   return (
    <>
@@ -62,20 +75,22 @@ function Navbar() {
             </li>
           </ul>
           <div className="space-x-1 text-xl flex md:space-x-4">
+           {!auth.isAuth ?
             <NavLink
-              to="/login"
-              className="bg-white-800 text-black hover:bg-green-800 hover:text-white p-1 rounded-lg"
-              onClick={closeNavCollaspse}
-            >
-              <span>Login</span>
-            </NavLink>
-            <NavLink
-              to="/Register"
-              className="bg-white-800 text-black hover:bg-green-800 hover:text-white p-1 rounded-lg"
-              onClick={closeNavCollaspse}
-            >
-              Register
-            </NavLink>
+            to="/login"
+            className="bg-white-800 text-black hover:bg-green-800 hover:text-white p-1 rounded-lg"
+            onClick={closeNavCollaspse}
+          >
+            <span>Login</span>
+          </NavLink>:
+          <button
+          className="bg-white-800 text-black hover:bg-green-800 hover:text-white p-1 rounded-lg"
+          onClick={handleLogout}
+         >
+          Logout
+        </button>
+          }
+            
           </div>
         </div>
         {/* Cart NavLink outside the collapse section */}

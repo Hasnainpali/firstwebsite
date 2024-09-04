@@ -18,7 +18,7 @@ function Cart() {
                  <h2 className='text-lg uppercase font-bold md:text-2xl  '>{product.title}</h2>
                  <p className="text-2xl font-bold">${product.price}</p>
                </div>
-               <div className="flex items-center px-4 py-2 bg-gray-500 text-white text-lg rounded-lg w-32 gap-2 mt-4 md:h-12 md:mt-36 lg:mt-36 lg:mr-28">
+               <div className="flex items-center px-4 py-2 bg-gray-500 text-white text-lg rounded-lg w-40 gap-2 mt-4 md:h-12 md:mt-36 lg:mt-36 lg:mr-28">
                <button onClick={()=>{addToCart(product)}}>
                 +
                </button>

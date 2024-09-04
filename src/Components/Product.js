@@ -49,10 +49,10 @@ function Product() {
           <p className="font-medium text-2xl">${product.price}</p>
           <p className="text-lg font-bolder text-justify"> <span> Description:</span> {product.description} </p>
           <div className="flex space-x-4">
-          <button onClick={()=> addToCart(product)}  className="bg-white text-black text-center outline outline-2 p-1 hover:bg-black hover:text-white rounded-lg w-48 ">
+          <button onClick={()=> addToCart(product)}  className="bg-white text-black text-center outline outline-2 p-1 hover:bg-black  rounded-lg w-48 ">
             Add to Cart
           </button>
-          <NavLink  to="/Cart" className="bg-white text-black text-center outline outline-2 p-1 hover:bg-black hover:text-white rounded-lg w-48">
+          <NavLink  to="/Cart" className="bg-white text-black text-center outline outline-2 p-1 hover:bg-black  rounded-lg w-48">
             Go to Cart
           </NavLink>
           </div>
