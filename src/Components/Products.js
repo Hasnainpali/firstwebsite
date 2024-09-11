@@ -5,42 +5,41 @@ import { NavLink } from "react-router-dom";
 import { setProduct } from "./Redux/Action";
 
 function Products() {
-  const Products = useSelector(state => state.allProduct.products);
-  const dispatch = useDispatch();
+  const Products = useSelector((state) => state.allProduct.products);
   const [filter, setFilter] = useState([]);
-  const [activeCategory, setActiveCategory] = useState("All")
+  const [activeCategory, setActiveCategory] = useState("All");
+  const dispatch = useDispatch();
 
-  const FetchData = async (category) => {
+  const FetchData = async () => {
     const apiUrl = "https://fakestoreapi.com/products";
 
     // if (category && category !== "All"){
     //   apiUrl = `https://fakestoreapi.com/products/category/${category}`
     // }
-    const response = await axios.get(apiUrl).catch((error) =>{
-      console.log(error,"error")
+    const response = await axios.get(apiUrl).catch((error) => {
+      console.log(error, "error");
     });
-    dispatch(setProduct(response.data))
+    dispatch(setProduct(response.data));
     // const jsonData = await response.json();
     // setData(jsonData);
     setFilter(response.data);
     // setActiveCategory("All")
-   
   };
 
   useEffect(() => {
     FetchData();
   }, []);
- 
+
   const filterProduct = (cat) => {
     const updatedlist = Products.filter((item) => item.category === cat);
     setFilter(updatedlist);
     setActiveCategory(cat);
   };
 
-  const showAllProduct = () =>{
-     FetchData()
-     setActiveCategory("All")
-  }
+  const showAllProduct = () => {
+    FetchData();
+    setActiveCategory("All");
+  };
   //  const [filtered, setFiltered]= useState([]);
 
   // useEffect(()=>{
@@ -63,31 +62,51 @@ function Products() {
       <div className=" flex flex-row justify-center ">
         <div className=" space-x-1 m-3 lg:space-x-4 md:m-8">
           <button
-            className={`rounded-lg  p-2 ${ activeCategory === "All" ? "bg-black text-white " :"bg-white-800 text-black" }`}
+            className={`rounded-lg  p-2 ${
+              activeCategory === "All"
+                ? "bg-black text-white "
+                : "bg-white-800 text-black"
+            }`}
             onClick={showAllProduct}
           >
             All
           </button>
           <button
-            className={`rounded-lg  p-2 ${ activeCategory === "men's clothing" ? "bg-black text-white " :"bg-white-800 text-black" }`}
+            className={`rounded-lg  p-2 ${
+              activeCategory === "men's clothing"
+                ? "bg-black text-white "
+                : "bg-white-800 text-black"
+            }`}
             onClick={() => filterProduct("men's clothing")}
           >
             Men's Clothing
           </button>
           <button
-            className={`rounded-lg  p-2 ${ activeCategory === "women's clothing" ? "bg-black text-white " :"bg-white-800 text-black" }`}
+            className={`rounded-lg  p-2 ${
+              activeCategory === "women's clothing"
+                ? "bg-black text-white "
+                : "bg-white-800 text-black"
+            }`}
             onClick={() => filterProduct("women's clothing")}
           >
             Women's Clothing
           </button>
           <button
-            className={`rounded-lg  p-2 ${ activeCategory === "jewelery" ? "bg-black text-white " :"bg-white-800 text-black" }`}
+            className={`rounded-lg  p-2 ${
+              activeCategory === "jewelery"
+                ? "bg-black text-white "
+                : "bg-white-800 text-black"
+            }`}
             onClick={() => filterProduct("jewelery")}
           >
             Jewellery
           </button>
           <button
-            className={`rounded-lg  p-2 ${ activeCategory === "electronics" ? "bg-black text-white " :"bg-white-800 text-black" }`}
+            className={`rounded-lg  p-2 ${
+              activeCategory === "electronics"
+                ? "bg-black text-white "
+                : "bg-white-800 text-black"
+            }`}
             onClick={() => filterProduct("electronics")}
           >
             Electornic
@@ -103,15 +122,19 @@ function Products() {
             >
               <div className="mb-5">
                 <div className="h-full text-center p-4 ">
-                  <img
-                    className="h-[250px] m-auto"
-                    src={product.image}
-                    alt={product.title}
-                  />
+                  <NavLink to={`/Products/${product.id}`}>
+                    <img
+                      className="h-[150px] md:h-[250px] lg:h-[250px] m-auto"
+                      src={product.image}
+                      alt={product.title}
+                    />
+                  </NavLink>
 
                   <div className="font-medium text-lg py-4 space-y-4 ">
-                    <h5>{product.title.substring(0, 15)}</h5>
-                    <p className="pb-4">${product.price}</p>
+                    <h5 className="text-black">
+                      {product.title.substring(0, 15)}
+                    </h5>
+                    <p className="pb-4 text-black">${product.price}</p>
                     <NavLink
                       className="bg-white-800 text-black outline outline-1  p-1 hover:bg-black hover:text-white rounded-lg"
                       to={`/Products/${product.id}`}
@@ -126,7 +149,7 @@ function Products() {
         })}
       </div>
     </div>
-    //  <div > 
+    //  <div >
     //        {data.content[0].Heading.map((headItem,HeadIndex)=>(
     //           <div key={HeadIndex} className='min-h-screen mt-4'>
     //             {headItem.headingTitle.type === 'Text' &&(
@@ -170,7 +193,7 @@ function Products() {
     //                               marginBottom: "15px",
     //                               borderRadius: "20px",
     //                               }} >
-    //                              Buy Now 
+    //                              Buy Now
     //                            </NavLink>
     //                         </div>
     //                       )

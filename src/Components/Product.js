@@ -35,17 +35,15 @@ function Product() {
  
   return (
     <div className="container p-4 ">
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:flex ">
-          <div className="">
+        <div className="md:flex lg:flex">
+          <div className="w-full">
             <img
-              className=""
+              className="h-[300px] lg:w-[50%] lg:h-[350px] m-auto "
               src={product.image}
               alt={product.title}
-              height={500}
-              width={500}
             />
           </div>
-          <div className=" space-y-4 ml:0 mt-10 md:mt-0 md:ml-10 ">
+          <div className=" space-y-4 ml-0 mt-10 md:mt-0 md:ml-10 lg:ml-10 ">
             <h3 className="uppercase text-3xl text-gray-950">
               <span>Category:</span>
               {product.category}
