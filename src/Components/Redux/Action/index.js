@@ -11,7 +11,7 @@ export const LOGOUT = "logout";
 // Signup action
 export const signup = (userData) => async (dispatch) => {
   try {
-    const response = await axios.post('https://firstwebsite-psi.vercel.app/api/user/signup', userData);
+    const response = await axios.post('https://login-signup-api-kappa.vercel.app/api/user/signup', userData);
     if (response && response.data) {
       localStorage.setItem("user", JSON.stringify(response.data.user))
       dispatch({
@@ -31,7 +31,7 @@ export const signup = (userData) => async (dispatch) => {
 // Login action
 export const login = (userData) => async (dispatch) => {
   try {
-    const response = await axios.post('https://firstwebsite-psi.vercel.app/api/user/signin', userData);
+    const response = await axios.post('https://login-signup-api-kappa.vercel.app/api/user/signin', userData);
     if (response && response.data) {
       localStorage.setItem("user", JSON.stringify(response.data.user))
       dispatch({
