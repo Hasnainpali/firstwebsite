@@ -1,32 +1,44 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { setProduct } from "./Redux/Action";
 
 function Products() {
-  const [data, setData] = useState([]);
+  const Products = useSelector(state => state.allProduct.products);
+  const dispatch = useDispatch();
   const [filter, setFilter] = useState([]);
   const [activeCategory, setActiveCategory] = useState("All")
 
+  const FetchData = async (category) => {
+    const apiUrl = "https://fakestoreapi.com/products";
+
+    // if (category && category !== "All"){
+    //   apiUrl = `https://fakestoreapi.com/products/category/${category}`
+    // }
+    const response = await axios.get(apiUrl).catch((error) =>{
+      console.log(error,"error")
+    });
+    dispatch(setProduct(response.data))
+    // const jsonData = await response.json();
+    // setData(jsonData);
+    setFilter(response.data);
+    // setActiveCategory("All")
+   
+  };
 
   useEffect(() => {
-    const FetchData = async () => {
-      const response = await fetch("https://fakestoreapi.com/products");
-      const jsonData = await response.json();
-      setData(jsonData);
-      setFilter(jsonData);
-      setActiveCategory("All")
-      console.log(jsonData, "data")
-    };
     FetchData();
   }, []);
-
+ 
   const filterProduct = (cat) => {
-    const updatedlist = data.filter((item) => item.category === cat);
+    const updatedlist = Products.filter((item) => item.category === cat);
     setFilter(updatedlist);
     setActiveCategory(cat);
   };
 
   const showAllProduct = () =>{
-     setFilter(data)
+     FetchData()
      setActiveCategory("All")
   }
   //  const [filtered, setFiltered]= useState([]);

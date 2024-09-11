@@ -1,14 +1,14 @@
-.category{
-    /* border-radius: 10px;
+/* .category{
+    border-radius: 10px;
     width: 180px !important;
-    max-height: 300px !important; */
+    max-height: 300px !important;
     margin: auto;
 
 }
-/* .swiper-wrapper{
+.swiper-wrapper{
     display: flex;
     gap: 30px;
-} */
+}
 .category-imgs {
     padding: 10px;
     margin: auto;
@@ -21,4 +21,4 @@
     top: var(--swiper-pagination-top, auto);
     left: 0;
     width: 100%;
-}
+} */

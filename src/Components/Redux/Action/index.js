@@ -7,6 +7,29 @@ export const LOGIN_SUCCESS = "login_success";
 export const LOGIN_FAILURE = "login_failure";
 export const CLEAR_MESSAGES = "clear_message"
 export const LOGOUT = "logout";
+export const SET_PRODUCT = "set_product";
+export const SELECTED_PRODUCT = "selected_product";
+export const REMOVE_SELECTED_PRODUCT = "remove_selected_product";
+
+//Api Action
+export const setProduct = (products) =>{
+  return{
+    type:SET_PRODUCT,
+    payload:products
+  }
+};
+
+export const selectedProduct = (product) => {
+  return {
+    type:SELECTED_PRODUCT,
+    payload:product
+  }
+};
+export const removeSelectedProduct = () =>{
+  return{
+    type:REMOVE_SELECTED_PRODUCT,
+  }
+};
 
 // Signup action
 export const signup = (userData) => async (dispatch) => {
@@ -60,3 +83,5 @@ export const logout = () => (dispatch) => {
 export const clearMessages = () => ({
     type: CLEAR_MESSAGES,
   });
+
+

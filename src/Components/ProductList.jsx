@@ -10,8 +10,6 @@ function ProductList() {
       const response = await fetch("https://fakestoreapi.com/products");
       const jsonData = await response.json();
       setData(jsonData.slice(0,8));
-
-      console.log(jsonData, "data")
     };
     FetchData();
   }, []);
