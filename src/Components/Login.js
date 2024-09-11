@@ -2,9 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import './Login.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { CLEAR_MESSAGES, login, signup } from './Redux/Action';
-
 import { Data } from './Context/SigninSignupContext';
-import { useNavigate } from 'react-router-dom';
+
 
 function LoginSignup() {
   const [isLogin, setIsLogin] = useState(true);
@@ -14,7 +13,6 @@ function LoginSignup() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const auth = useSelector(state => state.auth);
   const dispatch = useDispatch();
-  const navigate = useNavigate()
   const {setNavFooter} = useContext(Data)
 
   useEffect(() => {
