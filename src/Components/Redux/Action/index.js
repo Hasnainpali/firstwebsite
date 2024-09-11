@@ -13,6 +13,7 @@ export const signup = (userData) => async (dispatch) => {
   try {
     const response = await axios.post('http://localhost:4000/api/user/signup', userData);
     if (response && response.data) {
+      localStorage.setItem("user", JSON.stringify(response.data.user))
       dispatch({
         type: SIGNUP_SUCCESS,
         payload: response.data,
@@ -32,6 +33,7 @@ export const login = (userData) => async (dispatch) => {
   try {
     const response = await axios.post('http://localhost:4000/api/user/signin', userData);
     if (response && response.data) {
+      localStorage.setItem("user", JSON.stringify(response.data.user))
       dispatch({
         type: LOGIN_SUCCESS,
         payload: response.data,
@@ -42,15 +44,17 @@ export const login = (userData) => async (dispatch) => {
     dispatch({
       type: LOGIN_FAILURE,
       payload: error.response.msg,
+      error:"invalid email or passowrd"
     });
   }
 };
 
 // Logout action
-export const logout = () => {
-  return {
+export const logout = () => (dispatch) => {
+  localStorage.removeItem('user');
+  dispatch({
     type: LOGOUT,
-  }
+  });
 };
 //clearMessage//
 export const clearMessages = () => ({

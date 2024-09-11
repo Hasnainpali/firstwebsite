@@ -1,10 +1,12 @@
 import { SIGNUP_SUCCESS,SIGNUP_FAILURE,LOGIN_SUCCESS,LOGIN_FAILURE,LOGOUT,CLEAR_MESSAGES } from "../Action";
 
+const storedUser = localStorage.getItem("user") ? JSON.parse(localStorage.getItem('user')) : null ;
+
 const initialValue = {
-    user:null,
+    user:storedUser,
     error:null,
     success:null,
-    isAuth: false
+    isAuth: storedUser ? true : false,
 };
 
 const AuthReducer = (state = initialValue, action) => {
@@ -21,7 +23,7 @@ const AuthReducer = (state = initialValue, action) => {
         case LOGIN_FAILURE:
             return {
                 ...state,
-                error:action.payload.msg,
+                error:action.error,
                 isAuth: false
             };
         case CLEAR_MESSAGES:

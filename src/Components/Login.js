@@ -2,8 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import './Login.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { CLEAR_MESSAGES, login, signup } from './Redux/Action';
-import { useNavigate } from 'react-router-dom';
+
 import { Data } from './Context/SigninSignupContext';
+import { useNavigate } from 'react-router-dom';
 
 function LoginSignup() {
   const [isLogin, setIsLogin] = useState(true);
@@ -17,19 +18,31 @@ function LoginSignup() {
   const {setNavFooter} = useContext(Data)
 
   useEffect(() => {
-    setNavFooter(false)
+    console.log('Auth Success:', auth.success);
+    console.log('Is Login:', isLogin);
+   
+  
+    if (auth.success && isLogin) {
+      setNavFooter(true)
+      setTimeout(() => {
+        window.location.href = '/'
+        // navigate("/")
+      }, 3000); // Wait for 3 seconds before redirecting
+    }
+  
     // If signup is successful, switch to the login view
     if (auth.success && !isLogin) {
       setIsLogin(true);
     }
-
-    if(auth.success || auth.error){
+  
+    if (auth.success || auth.error) {
       const timer = setTimeout(() => {
-          dispatch({type:CLEAR_MESSAGES})
+        dispatch({ type: CLEAR_MESSAGES });
       }, 3000);
-      return ()=> clearTimeout(timer)
+      return () => clearTimeout(timer);
     }
   }, [auth.success, isLogin, auth.error, dispatch, setNavFooter]);
+  
 
   
 
@@ -41,11 +54,7 @@ function LoginSignup() {
       dispatch(signup({ name, email, password, confirmPassword }));
     } else {
       // Login flow
-      dispatch(login({ email, password }));
-      setTimeout(() => {
-        navigate('/') 
-      }, 3000);
-      
+      dispatch(login({ email, password }));  
     }
   };
 

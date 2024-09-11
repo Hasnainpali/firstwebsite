@@ -6,10 +6,7 @@ import Navbar from "./Components/Navbar";
 import Product from "./Components/Product";
 import Products from "./Components/Products";
 import { Routes, Route, useLocation } from "react-router-dom";
-import Signup from "./Components/Signup";
-import Login from "./Components/Login";
-import { useContext, useEffect, useState } from "react";
-import Category from "./Components/Category";
+import { useContext, useEffect, } from "react";
 import Footer from "./Components/Footer";
 import { Data } from "./Components/Context/SigninSignupContext";
 import LoginSignup from "./Components/Login";
@@ -17,16 +14,13 @@ import LoginSignup from "./Components/Login";
 function App() {
   // const [users, setusers] = useState([]);
   const { navFooter, setNavFooter } = useContext(Data);
-  const location = useLocation()
+
 
   useEffect(()=>{
-    if(location.pathname == '/login'){
-      setNavFooter(false)
-    }else{
-      setNavFooter(true)
-    }
+
+    setNavFooter(true)
     
-  },[location.pathname, setNavFooter])
+  },[ setNavFooter])
 
   // const handleSignup = (user) => {
   //   const updateduser = [...users, user];
@@ -36,7 +30,7 @@ function App() {
   return (
     <>
     
-          {navFooter  && <Navbar />}
+          {navFooter ===true  && <Navbar />}
 
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -53,7 +47,7 @@ function App() {
             <Route exact path="/Cart" element={<Cart />} />
           </Routes>
 
-      {navFooter  && <Footer />}
+      {navFooter ===true  && <Footer />}
     </>
   );
 }

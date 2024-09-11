@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import './Home.css';
 import {Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
@@ -6,12 +6,23 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from "swiper/modules";
 import ProductList from "./ProductList";
+import { useNavigate } from "react-router-dom";
+import { Data } from "./Context/SigninSignupContext";
 // import { useDispatch, useSelector } from "react-redux";
 // import { Decrement, Increment } from "./Redux/Action";
 
 function Home() {
   // const counter = useSelector(state => state.Counter )
   // const dispatch = useDispatch()
+  const {setNavFooter} = useContext(Data)
+  // const navigate = useNavigate();
+
+  useEffect(()=>{
+
+    setNavFooter(true)
+   
+  },[setNavFooter]);
+
   return (
     <div className="">
       <section id="hero">

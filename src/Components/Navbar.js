@@ -1,30 +1,40 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BsCartPlus } from "react-icons/bs";
 import { NavLink, useNavigate } from "react-router-dom";
 import { CartContext } from "./Context/cart";
 import "./Navbar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "./Redux/Action";
+import { Data } from "./Context/SigninSignupContext";
 
 function Navbar() {
   const { cartItems } = useContext(CartContext);
+  const { setNavFooter } = useContext(Data);
   const [navCollapse, setNavCollapse]= useState(false);
   const auth = useSelector(state => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  console.log("Auth State:", auth); // Add this line to log the auth state
+  console.log("Auth State Updated:", auth.isAuth);
   
+  useEffect(() => {
+
+    setNavFooter(false);
+    
+  }, [ setNavFooter]);
+
   const handleNavCollapse =()=>{
     setNavCollapse(!navCollapse)
   }
   const closeNavCollaspse=()=>{
     setNavCollapse(false)
+    setNavFooter(false)
   }
 
   const handleLogout = () =>{
     dispatch(logout())
     navigate('/login')
+    setNavFooter(false)
 };
 
 

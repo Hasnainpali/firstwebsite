@@ -5,10 +5,12 @@ function Footer() {
   const {setNavFooter} = useContext(Data)
 
   useEffect(()=>{
+
     setNavFooter(false)
-  },[])
+
+  },[setNavFooter]);
   return (
-    <div className=' border-t border-2 container pt-2'>
+    <div className=' container pt-2'>
         <hr  />  
         <div className="text-center py-2  ">
         
