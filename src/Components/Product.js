@@ -1,4 +1,4 @@
-import React, { useContext, useEffect} from 'react';
+import React, { useContext, useEffect, useState} from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { AiFillStar } from "react-icons/ai";
 import { CartContext } from './Context/cart';
@@ -7,6 +7,7 @@ import axios from 'axios';
 import { removeSelectedProduct, selectedProduct } from './Redux/Action';
 
 function Product() {
+  const [loading, setLoading] = useState(false);
   const{addToCart}=useContext(CartContext);
   const product = useSelector(state => state.product)
   const { id } = useParams();
@@ -23,7 +24,18 @@ function Product() {
     return () =>{
       dispatch(removeSelectedProduct())
     }
+    
   }, [id]);
+
+  const handleaddToCart = () =>{
+    setLoading(true)
+    setTimeout(() => {
+      addToCart(product);
+      setLoading(false)
+    }, 2000);
+  
+  };
+
     // const {addToCart}= useContext(CartContext)
     // const {id} = useParams();
     // const [product, setProduct]=useState([])
@@ -64,14 +76,14 @@ function Product() {
             </p>
             <div className="flex space-x-4">
               <button
-                onClick={() => addToCart(product)}
-                className="bg-white text-black text-center outline outline-2 p-1 hover:bg-black  rounded-lg w-48 "
+                onClick={handleaddToCart}
+                className="bg-white text-black text-center border-black border-2 p-1 rounded-lg w-48 "
               >
-                Add to Cart
+               {loading ? "Adding...": "Add to Cart"}
               </button>
               <NavLink
                 to="/Cart"
-                className="bg-white text-black text-center outline outline-2 p-1 hover:bg-black  rounded-lg w-48"
+                className="bg-white text-black text-center border-black border-2 p-1 rounded-lg w-48"
               >
                 Go to Cart
               </NavLink>

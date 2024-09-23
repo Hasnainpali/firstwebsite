@@ -39,7 +39,7 @@ function ProductList() {
     <div className="container p-5">
       <div className=" flex-row">
         <div className="flex justify-content-between mb-3 ">
-          <h2 className="font-bold text-3xl">Featured Products</h2>
+          <h2 className="font-bold text-xl md:text-3xl lg:text-3xl">Featured Products</h2>
           <button className="btn btn-outline-primary" onClick={() => navigate('/Products')} >View All</button>
         </div>
       </div>
